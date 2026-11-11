@@ -16,12 +16,61 @@ body {
 }
 
 header {
+  position: relative;
   text-align: center;
-  padding: 20px 0;
+  padding: 20px 150px;
   margin-bottom: 30px;
   background-color: #1a237e;
   color: white;
   border-radius: 5px;
+}
+
+.auth-button {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  background-color: white;
+  color: #1a237e;
+}
+
+.auth-button:hover {
+  background-color: #e8eaf6;
+}
+
+dialog {
+  width: min(420px, calc(100% - 32px));
+  margin: auto;
+  padding: 24px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.45);
+}
+
+dialog h2 {
+  margin-bottom: 20px;
+  color: #1a237e;
+}
+
+.dialog-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.secondary-button {
+  background-color: #616161;
+}
+
+.secondary-button:hover {
+  background-color: #424242;
+}
+
+#signup-container[hidden] {
+  display: none;
 }
 
 header h1 {
@@ -182,6 +231,12 @@ button:hover {
   border: 1px solid #ef9a9a;
 }
 
+#login-message:not(.hidden) {
+  margin: 0 0 16px;
+  padding: 10px;
+  border-radius: 4px;
+}
+
 .info {
   background-color: #d1ecf1;
   color: #0c5460;
@@ -197,4 +252,17 @@ footer {
   margin-top: 30px;
   padding: 20px;
   color: #666;
+}
+
+@media (max-width: 640px) {
+  header {
+    padding: 20px 12px 72px;
+  }
+
+  .auth-button {
+    top: auto;
+    right: 50%;
+    bottom: 12px;
+    transform: translateX(50%);
+  }
 }
